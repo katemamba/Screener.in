@@ -1,10 +1,10 @@
 'use strict';
 jest.disableAutomock();
 jest.mock('fetch-on-rest');
-var api = require('../../api.js');
-var React = require('react');
-var Talks = require('../talks.jsx');
-var TestUtils = require('react-addons-test-utils');
+import api from '../../api.js'
+import React from 'react'
+import Talks from '../talks.jsx'
+import TestUtils from 'react-addons-test-utils'
 
 var results = [
   {
@@ -22,7 +22,7 @@ describe('talks Tests', function() {
     window.userId = 32;
     api.setResponse('/api/talks/?tab=top&page=1',
       JSON.stringify({results: results}));
-    api.setResponse('/api/talks/voted/', []);
+    api.setResponse('/api/talks/voted/', "[]");
     talks = TestUtils.renderIntoDocument(
       <Talks params={params} location={location} />
     );

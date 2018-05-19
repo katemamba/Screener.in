@@ -1,10 +1,10 @@
 'use strict';
-jest.disableAutomock();
 jest.mock('fetch-on-rest');
-var api = require('../../api.js');
-var React = require('react');
-var TestUtils = require('react-addons-test-utils');
-var CompanySearch = require('../company.search.jsx');
+jest.useFakeTimers()
+import api from '../../api.js'
+import React from 'react'
+import TestUtils from 'react-addons-test-utils'
+import CompanySearch from '../company.search.jsx'
 
 describe('Company Search Tests', function() {
   var search, dummy;
